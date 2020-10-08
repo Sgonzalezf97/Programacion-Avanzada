@@ -4,35 +4,53 @@ from Violin import Violin
 from Guitarra import Guitarra
 from Persona import Persona
 from Bajo import Bajo
-from Instrumento import Instrumento
 
 
 class Banda():
-    """def __init__(self, nombre,instrumento):
-        self.nombre= nombre
-        self.instrumento = instrumento"""
 
-    def agregarm(self):
+    def agregarm(self, nombre):
+        lista = []
+        lista.append(nombre)
+        print(lista)
+
+    def GenerarI(self):
         numero = random.randint(1, 3)
         if (numero == 1):
             i = Guitarra("DO")
-            print(i.afinar())
+            """print(i.afinar())
             print(i.tocar())
-            print (i.tocarEn("Do"))
+            print(i.tocarEn("Do"))"""
+            return i
         elif (numero == 2):
             i = Bajo("Do")
-            print (i.afinar())
-            print (i.tocar())
-            print (i.tocarEn("Do"))
+            """print(i.afinar())
+            print(i.tocar())
+            print(i.tocarEn("Do"))"""
+            return i
         else:
             i = Violin("Do")
-            print (i.afinar())
-            print (i.tocar())
-            print (i.tocarEn("Do"))
+            """print(i.afinar())
+            print(i.tocar())
+            print(i.tocarEn("Do"))"""
+            return i
 
 
-p = Persona("Andres")
+class Musico(Persona, Banda):
+    def presentar(self):
+        return "hola mi nombre es " + self.nombre + " y estoy:"
+
+    def tocarI(self):
+        b=Banda()
+        return b.GenerarI()
+        print(i.afinar())
+        print(i.tocar())
+        print(i.tocarEn("Do"))
+
+
+
+p = Musico("Andres")
 print(p.presentar())
-b=Banda()
-print(b.agregarm())
-
+print(p.tocarI())
+j = Musico("Julio")
+print(j.presentar())
+print(j.tocarI())
