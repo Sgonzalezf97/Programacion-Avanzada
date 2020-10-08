@@ -1,13 +1,13 @@
 from Instrumento import Instrumento
 class Guitarra(Instrumento):
-    """def __init__(self, afinar,tocar):
-        self.afinar= afinar
-        self.tocar = tocar"""
+    def __init__(self, nota):
+        self.nota= nota
+
 
     def afinar(self):
         return "Afinando la guitarra"
     def tocar(self):
         return "tocando la guitarra"
-    def tocarEn(self):
-        return " tocando la guitarra en DO"
+    def tocarEn(self,nota):
+        return "tocando la guitarra en "+ self.nota
 

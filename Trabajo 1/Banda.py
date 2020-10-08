@@ -15,20 +15,20 @@ class Banda():
     def agregarm(self):
         numero = random.randint(1, 3)
         if (numero == 1):
-            i = Guitarra()
+            i = Guitarra("DO")
             print(i.afinar())
             print(i.tocar())
-            print (i.tocarEn())
+            print (i.tocarEn("Do"))
         elif (numero == 2):
-            i = Bajo()
+            i = Bajo("Do")
             print (i.afinar())
             print (i.tocar())
-            print (i.tocarEn())
+            print (i.tocarEn("Do"))
         else:
-            i = Violin()
+            i = Violin("Do")
             print (i.afinar())
             print (i.tocar())
-            print (i.tocarEn())
+            print (i.tocarEn("Do"))
 
 
 p = Persona("Andres")
